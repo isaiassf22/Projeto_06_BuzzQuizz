@@ -116,6 +116,7 @@ li p{
     color: #FFFFFF;
     position: absolute;
     bottom: 0;
+    right: auto;
 }
 @media (max-width: 1100px){
     main{
@@ -139,7 +140,6 @@ li p{
         align-items: center;
     }
     .gridquizzes li{
-      
         width: 90%;
         height: 250px;
     }
@@ -149,5 +149,6 @@ li p{
     }
     }
     li p{
+       
         font-size: 22px;
     }
