@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/style.css">
-     || LINK DA FONTE
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
@@ -25,13 +24,10 @@
     
         <main>
             <!-- ABA DE QUIZES DO USUARIO -->
-            <div class="quizes-usuario escondido">
+            <div class="quizes-usuario">
                 <p class="nenhumquiz">Você não criou nenhum <br>quizz ainda :(</p>
                 <button class="criarquizbotao">Criar Quizz</button>
             </div>
-
-
-
 
             <!-- ABA DE QUIZES DO USUARIO -->
             <div class="layout-seus-quizes escondido">
@@ -39,7 +35,7 @@
                     <p class="todosquiz">Seus Quizzes</p>
                         <ion-icon class="icone-novo-quiz" name="add-circle"></ion-icon> 
                 </div>
-                <ul class="seus-quizes">
+                <ul class="seus-quizes esc">
                     <li class="teste">
                         <img src="images/castle.png">
                         <p> Teste teste teste teste teste</p>
@@ -53,34 +49,51 @@
 
 
             <!-- ABA DE QUIZES QUANDO NAO HÁ NENHUM -->
-            <div class="conteiner-geral-quizes escondido">
+            <div class="conteiner-geral-quizes">
+            <div class="conteiner-de-quizes">
                 <h1 class="todosquiz">Todos os Quizzes</h1>
                 <ul class="gridquizzes">
                     <li>
-                    <img src="images/castle.png" alt="">
+                        <img src="images/castle.png" alt="">
+                        <p>O quão Potterhead é você?</p>
                     </li>
                     <li>
-                    <img src="images/simpsons.png" alt="">
+                        <img src="images/simpsons.png" alt="">
+                        <p>Acerte os personagens corretos dos Simpsons e prove seu amor!</p>
                     </li>
                     <li>
-                    <img src="images/ferias-ex.png" alt="">
+                        <img src="images/ferias-ex.png" alt="">
+                        <p>É ex-BBB ou ex-De férias com o Ex?</p>
                     </li>
                     <li>
-                    <img src="images/preguiça.png" alt="">
+                        <img src="images/preguiça.png" alt="">
+                        <p>O quanto você é de boas?</p>
                     </li>
                     <li>
-                    <img src="images/castle.png" alt="">
+                        <img src="images/castle.png" alt="">
                     </li>
                     <li>
-                    <img src="images/simpsons.png" alt="">
+                        <img src="images/simpsons.png" alt="">
                     </li>
-                    
+                    <li>
+                        <img src="images/simpsons.png" alt="">
+                        <p>Acerte os personagens corretos dos Simpsons e prove seu amor!</p>
+                    </li><li>
+                        <img src="images/simpsons.png" alt="">
+                        <p>Acerte os personagens corretos dos Simpsons e prove seu amor!</p>
+                    </li><li>
+                        <img src="images/simpsons.png" alt="">
+                        <p>Acerte os personagens corretos dos Simpsons e prove seu amor!</p>
+                    </li><li>
+                        <img src="images/simpsons.png" alt="">
+                        <p>Acerte os personagens corretos dos Simpsons e prove seu amor!</p>
+                    </li>
                 </ul>
             </div>
 
 
             <!-- ABA DE QUIZ ABERTO -->
-            <div class="aba-quiz">
+            <div class="aba-quiz escondido">
                 <div class="banner-superior">
                     <img src="./images/castle.png">
                     <p class="teste">O quão Potterhead é você?</p>
