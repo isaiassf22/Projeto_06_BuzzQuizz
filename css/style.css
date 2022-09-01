@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,400;0,500;1,300&display=swap');
 *{
     box-sizing: border-box;
 }
@@ -75,9 +76,8 @@ main{
     margin-top: 30px;
 }
 
-.conteiner-geral-quizes{
+.conteiner-de-quizes{
     width: 70%;
-    background-color: aqua;
     min-height: 700px;
     margin-top: 77px;
 }
@@ -102,28 +102,52 @@ main{
     width: 100%;
 }
 .gridquizzes li{
-    width: 70%;
     height: auto;
-    background-color: red;
+    position: relative;
 }
 li img{
-    width: 100%;
+   width: 235px;
+   height: 100px;
+}
+li p{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 19px;
+    color: #FFFFFF;
+    position: absolute;
+    bottom: 0;
 }
 @media (max-width: 1100px){
     main{
         margin: 20px;
     }
-    .quizes-usuario,.conteiner-geral-quizes{
+    .quizes-usuario,.conteiner-de-quizes{
        width: 90%;
+      
     }
-    
+    .conteiner-de-quizes{
+       
+        display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+   
     .gridquizzes{
+        width: 100%;
         display: flex;
         flex-direction: column;
-        grid-template-columns: repeat(1, 1fr);
+        align-items: center;
     }
-    .gridquizzes li,.todosquiz{
-        margin: 0 auto;
+    .gridquizzes li{
+      
+        width: 90%;
+        height: 250px;
     }
-
-}
+    li img{
+        width: 100%;
+        height: 100%;
+    }
+    }
+    li p{
+        font-size: 22px;
+    }
