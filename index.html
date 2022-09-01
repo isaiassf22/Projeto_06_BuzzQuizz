@@ -14,6 +14,9 @@
     <title>Buzz Feed</title>
 </head>
 <body>
+
+
+    <!-- ABA BUZZ FEED EM CIMA -->
     <header>
         <div class="barrasuperior">
           <h1 class="logobuzzfeed">BuzzQuizz</h1>
@@ -21,12 +24,36 @@
     </header>
     
         <main>
-            
-            <div class="quizes-usuario">
-                <h2 class="nenhumquiz">Você não criou nenhum <br>quizz ainda :(</h2>
+            <!-- ABA DE QUIZES DO USUARIO -->
+            <div class="quizes-usuario escondido">
+                <p class="nenhumquiz">Você não criou nenhum <br>quizz ainda :(</p>
                 <button class="criarquizbotao">Criar Quizz</button>
             </div>
-            <div class="conteiner-geral-quizes">
+
+
+
+
+            <!-- ABA DE QUIZES DO USUARIO -->
+            <div class="layout-seus-quizes escondido">
+                <div class="titulo-icone">
+                    <p class="todosquiz">Seus Quizzes</p>
+                        <ion-icon class="icone-novo-quiz" name="add-circle"></ion-icon> 
+                </div>
+                <ul class="seus-quizes">
+                    <li class="teste">
+                        <img src="images/castle.png">
+                        <p> Teste teste teste teste teste</p>
+                        </li>
+                        <li>
+                        <img src="images/simpsons.png">
+                        <p> Teste teste teste teste teste</p>
+                        </li>
+                </div>
+            </div>
+
+
+            <!-- ABA DE QUIZES QUANDO NAO HÁ NENHUM -->
+            <div class="conteiner-geral-quizes escondido">
                 <h1 class="todosquiz">Todos os Quizzes</h1>
                 <ul class="gridquizzes">
                     <li>
@@ -50,8 +77,24 @@
                     
                 </ul>
             </div>
+
+
+            <!-- ABA DE QUIZ ABERTO -->
+            <div class="aba-quiz">
+                <div class="banner-superior">
+                    <img src="./images/castle.png">
+                    <p class="teste">O quão Potterhead é você?</p>
+                </div>
+                <div class="">
+
+                </div>
+            </div>
+
+
+
         </main>
        
-    
+        <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>
 </html>
