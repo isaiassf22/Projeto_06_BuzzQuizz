@@ -13,6 +13,9 @@
     <title>Buzz Feed</title>
 </head>
 <body>
+
+
+    <!-- ABA BUZZ FEED EM CIMA -->
     <header>
         <div class="barrasuperior">
           <h1 class="logobuzzfeed">BuzzQuizz</h1>
@@ -20,11 +23,33 @@
     </header>
     
         <main>
-            
-            <div class="quizes-usuario">
-                <h2 class="nenhum-quiz">Você não criou nenhum <br>quizz ainda :(</h2>
+            <!-- ABA DE QUIZES DO USUARIO -->
+            <div class="quizes-usuario escondido">
+                <p class="nenhumquiz">Você não criou nenhum <br>quizz ainda :(</p>
                 <button class="criarquizbotao">Criar Quizz</button>
             </div>
+
+            <!-- ABA DE QUIZES DO USUARIO -->
+            <div class="layout-seus-quizes escondido">
+                <div class="titulo-icone">
+                    <p class="todosquiz">Seus Quizzes</p>
+                        <ion-icon class="icone-novo-quiz" name="add-circle"></ion-icon> 
+                </div>
+                <ul class="seus-quizes esc">
+                    <li class="teste">
+                        <img src="images/castle.png">
+                        <p> Teste teste teste teste teste</p>
+                        </li>
+                        <li>
+                        <img src="images/simpsons.png">
+                        <p> Teste teste teste teste teste</p>
+                        </li>
+                </div>
+            </div>
+
+
+            <!-- ABA DE QUIZES QUANDO NAO HÁ NENHUM -->
+            <div class="conteiner-geral-quizes escondido">
             <div class="conteiner-de-quizes">
                 <h1 class="todosquiz">Todos os Quizzes</h1>
                 <ul class="gridquizzes">
@@ -65,9 +90,106 @@
                     </li>
                 </ul>
             </div>
+        </div>
+            <!-- ABA DE QUIZ ABERTO -->   
+                <div class="banner-superior">
+                    <img src="./images/castle.png">
+                    <p class="teste">O quão Potterhead é você?</p>
+            </div>
+
+            <ul class="div-perguntas">
+                <li class="conteiner-pergunta">
+                    <div class="pergunta">
+                        <p>Em qual animal Olho-Tonto Moody transfigurou Malfoy?</p>
+                    </div>
+
+                    <div class="grid-fotos">
+                        <div class="primeira opcao">
+                            <img src="./images/image 3.png">
+                            <p>Harry Potter e a Pedra Filosofal</p>
+                        </div>
+                        <div class="segunda opcao">
+                            <img src="./images/image 4 (1).png">
+                            <p>Gato</p>
+                        </div>
+                        <div class="terceira opcao">
+                            <img src="./images/image 7.png">
+                            <p>Rato</p>
+                        </div>
+                        <div class="quarta opcao">
+                            <img src="./images/image 8.png">
+                            <p>Fuinha</p>
+                        </div>
+                    </div>
+
+
+                    <li class="conteiner-pergunta">
+                        <div class="pergunta">
+                            <p>Em qual animal Olho-Tonto Moody transfigurou Malfoy?</p>
+                        </div>
+    
+                        <div class="grid-fotos">
+                            <div class="primeira opcao">
+                                <img src="./images/image 3.png">
+                                <p>Harry Potter e a Pedra Filosofal</p>
+                            </div>
+                            <div class="segunda opcao">
+                                <img src="./images/image 4 (1).png">
+                                <p>Gato</p>
+                            </div>
+                            <div class="terceira opcao">
+                                <img src="./images/image 7.png">
+                                <p>Rato</p>
+                            </div>
+                            <div class="quarta opcao">
+                                <img src="./images/image 8.png">
+                                <p>Fuinha</p>
+                            </div>
+                        </div>
+
+                        <li class="conteiner-pergunta">
+                            <div class="pergunta">
+                                <p>Em qual animal Olho-Tonto Moody transfigurou Malfoy?</p>
+                            </div>
+        
+                            <div class="grid-fotos">
+                                <div class="primeira opcao">
+                                    <img src="./images/image 3.png">
+                                    <p>Harry Potter e a Pedra Filosofal</p>
+                                </div>
+                                <div class="segunda opcao">
+                                    <img src="./images/image 4 (1).png">
+                                    <p>Gato</p>
+                                </div>
+                                <div class="terceira opcao">
+                                    <img src="./images/image 7.png">
+                                    <p>Rato</p>
+                                </div>
+                                <div class="quarta opcao">
+                                    <img src="./images/image 8.png">
+                                    <p>Fuinha</p>
+                                </div>
+                            </div>
+
+                            <li class="resultadoquiz">
+                                <header class="resultado">
+                                    <p>88% de acerto:você é praticamente um aluno de Hogwarts</p>
+                                </header>
+                                <main class="conteiner">
+                                    <img src="./images/image 10.png">
+                                    <div class="descricao">
+                                        <p>Parabéns Potterhead! <br>Bem-vindx a Hogwarts, aproveite o loop<br> infinito de comida e clique <br>no botão abaixo para usar o vira-tempo e <br>reiniciar este teste.</p>
+                                    </div>
+                                </main>
+                            </li>
+
+
         </main>
        
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="js/script.js"></script>
+
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+        <script src="js/script.js"></script>
 </body>
 </html>

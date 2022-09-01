@@ -6,7 +6,14 @@ main{
     display: flex;
    flex-direction: column;
    align-items: center;
+   
 }
+
+*{
+    word-break: break-word;
+     
+}
+
 
 .barrasuperior{
     background-color:#EC362D;
@@ -49,6 +56,11 @@ main{
     display: block;
     align-items: center;
     justify-content: center;
+}
+
+
+.escondido{
+    display: none;
 }
 
 .criarquizbotao{
@@ -100,6 +112,7 @@ main{
     margin-top: 20px;
     /* height:337px; */
     width: 100%;
+    
 }
 .gridquizzes li{
     height: auto;
@@ -147,8 +160,236 @@ li p{
         width: 100%;
         height: 100%;
     }
-    }
+    
     li p{
        
         font-size: 22px;
     }
+    .seus-quizes{
+        display: flex;
+        flex-direction: column;
+        grid-template-columns: repeat(1, 1fr);
+    }
+    
+ }
+
+
+.escondido{
+    display: none;
+}
+
+.layout-seus-quizes{
+    width: 70%;
+    height: auto;
+    background-color: aquamarine;
+    overflow: hidden;
+    margin-top: 146px;
+}
+
+.seus-quizes{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+}
+
+.seus-quizes li{
+    margin-top: 10px;
+    width: 340px;
+    height: 181px;
+}
+
+.seus-quizes .teste{
+    position: relative;
+}
+
+.seus-quizes .teste p{
+    position: absolute;
+}
+
+
+.titulo-icone{
+    display: flex;
+    width: 100%;
+    margin-top:px;
+}
+
+.layout-seus-quizes .todosquiz{
+    margin-top: 5px;
+}
+
+
+.icone-novo-quiz{
+    color: red;
+    font-size: 31px;
+    margin-left: 10px;
+}
+
+.aba-quiz{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+
+.banner-superior{
+       width: 100%;
+       height: 227px;
+      overflow: hidden;
+      position: absolute;
+}
+
+.banner-superior img{
+    width: 100%;
+    margin-top:-170px;
+    filter: brightness(60%)
+}
+
+
+
+
+.div-perguntas{
+    width: 688.16px;    
+    
+    height: 100vw;   
+    margin-top: 350px;
+   display: grid;
+   grid-template-columns: repeat(1, 1fr);
+    grid-gap: 130px;
+    
+}
+
+.conteiner-pergunta{
+    width: 688.16px;
+    height: 600px;
+    
+}
+
+
+.pergunta{
+    width: 688.16px;
+    height: 137.99px;
+    background-color: #434CA0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.pergunta p{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 23px;
+    line-height: 27px;
+}
+
+.teste{
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #FFFFFF;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 37px;
+    line-height: 43px;
+}
+
+.grid-fotos{
+    
+    width:688.16px;
+    height:440px;
+    margin-top:20px;
+    display:grid;
+    grid-template-columns: repeat(2, 1fr);
+    
+}
+
+.opçao{
+    width: 331.94px;
+    
+    height: 200px;
+    
+}
+
+.opcao img{
+    width: 331.94px;
+    height: 175.2px;
+}
+
+.opcao p{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 23px;
+    align-items: center;
+    margin-top: 5px;
+    color: #000000;
+}
+
+.resultadoquiz{
+  
+    width: 688.16px;
+    height: 430px;
+}
+
+.resultado{
+    width: 100%;
+    height:99px;
+    background-color: #EC362D;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.resultado p{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 23px;
+    line-height: 43px;
+    color: #FFFFFF;
+    word-break: break-all;
+}
+
+.conteiner{
+    background: #E5E5E5;
+    width: 688.16px;
+    height: 280px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+}
+
+.conteiner img{
+    width: 330px;
+    height:260px;
+}
+
+.descricao{
+    width: 328px;
+    height: 250px;
+    word-break: break-all;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.descricao p{
+    word-break: break-all;
+    word-break: break-word;
+    overflow: hidden;
+    word-break: break-word;
+    text-overflow: ellipsis;
+    color: #484848;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 19px;
+    line-height: 25px;
+}
