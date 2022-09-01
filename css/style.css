@@ -11,9 +11,13 @@ main{
 
 *{
     word-break: break-word;
+    
      
 }
 
+body{
+    background: #E5E5E5;
+}
 
 .barrasuperior{
     background-color:#EC362D;
@@ -128,7 +132,7 @@ li p{
     font-size: 19px;
     color: #FFFFFF;
     position: absolute;
-    bottom: 0;
+    
     right: auto;
 }
 @media (max-width: 1100px){
@@ -161,10 +165,6 @@ li p{
         height: 100%;
     }
     
-    li p{
-       
-        font-size: 22px;
-    }
     .seus-quizes{
         display: flex;
         flex-direction: column;
@@ -251,20 +251,24 @@ li p{
 
 
 .div-perguntas{
-    width: 688.16px;    
-    
+    width: 688.16px;
     height: 100vw;   
-    margin-top: 350px;
-   display: grid;
+    margin-top: 300px;
    grid-template-columns: repeat(1, 1fr);
     grid-gap: 130px;
     
 }
 
+.div-perguntas li{
+    margin-top: 70px;
+}
+
+
 .conteiner-pergunta{
     width: 688.16px;
     height: 600px;
-    
+    background-color: #FFFFFF;
+    border-radius: 5px;
 }
 
 
@@ -306,7 +310,7 @@ li p{
     margin-top:20px;
     display:grid;
     grid-template-columns: repeat(2, 1fr);
-    
+    grid-gap: 20px;
 }
 
 .opçao{
@@ -333,7 +337,7 @@ li p{
 }
 
 .resultadoquiz{
-  
+    
     width: 688.16px;
     height: 430px;
 }
@@ -358,7 +362,7 @@ li p{
 }
 
 .conteiner{
-    background: #E5E5E5;
+    background-color:#FFFFFF;
     width: 688.16px;
     height: 280px;
     display: flex;
@@ -381,15 +385,21 @@ li p{
 }
 
 .descricao p{
-    word-break: break-all;
-    word-break: break-word;
     overflow: hidden;
-    word-break: break-word;
-    text-overflow: ellipsis;
     color: #484848;
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 700;
     font-size: 19px;
     line-height: 25px;
+}
+
+@media (max-width:1100px){
+    .banner-superior p{
+        font-size: 19px;
+    }
+    
+    .div-perguntas p{
+        font-size: 19px;
+    }
 }
