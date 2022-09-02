@@ -12,8 +12,8 @@ function receberQuizes(resposta){
      let gradeQuiz=document.querySelector('.gridquizzes')
      let renderizando='' //renderizar os quizzes
     for(i=0;i<containerDeQuizes.length;i++){
-            renderizando+= `<li class="quizesgeral" onclick="exibirquiz()">
-            <img src="${containerDeQuizes[i].image}" data-${containerDeQuizes[i].id}>
+            renderizando+= `<li class="quizesgeral" onclick="exibirquiz(this)" data-${containerDeQuizes[i].id}>
+            <img src="${containerDeQuizes[i].image}">
             <p>${containerDeQuizes[i].title}</p>
         </li>
         `
@@ -29,7 +29,7 @@ function erro(_errou) {
     setInterval(window.location.reload() ,4000);
 }
 
-function exibirquiz(){
+function exibirquiz(quizescolhido){
     console.log('clicou');
     let quizusuario =document.querySelector('.quizes-usuario');
     let quiztodos =document.querySelector('.conteiner-de-quizes');
@@ -39,6 +39,7 @@ function exibirquiz(){
     quiztodos.style.display='none';
     abaquiz.classList.remove("escondido");
     banner.classList.remove("escondido");
+    console.log(quizescolhido.data);
 }
 
 
