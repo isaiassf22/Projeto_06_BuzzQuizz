@@ -45,7 +45,7 @@ function erro(_errou) {
     setInterval(window.location.reload() ,4000);
 }
 
-function exibirquiz(){
+function exibirquiz(quizescolhido){
     console.log('clicou');
     let quizusuario =document.querySelector('.quizes-usuario');
     let quiztodos =document.querySelector('.conteiner-de-quizes');
@@ -55,6 +55,7 @@ function exibirquiz(){
     quiztodos.style.display='none';
     abaquiz.classList.remove("escondido");
     banner.classList.remove("escondido");
+    console.log(quizescolhido.data);
 }
 
 
