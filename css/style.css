@@ -16,7 +16,7 @@ main{
 }
 
 body{
-    background: #E5E5E5;
+    background: #FAFAFA;
 }
 
 .barrasuperior{
@@ -54,12 +54,13 @@ body{
     width: 70%;
     height: 181px;
     text-align: center;
-    border: 1px dashed #D5D5D5;
+    border: 1px dashed #D4D4D4;
     border-radius: 5px;
     margin-top: 146px;
     display: block;
     align-items: center;
     justify-content: center;
+    background-color: #FAFAFA;
 }
 
 
@@ -112,28 +113,37 @@ body{
     position: relative;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-gap: 10px;
-    margin-top: 20px;
-    /* height:337px; */
+    grid-gap: 20px;
     width: 100%;
+    justify-content: space-around;
     
 }
 .gridquizzes li{
+    padding: 20px;
     height: auto;
     position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    cursor: pointer;
 }
-li img{
-   width: 235px;
-   height: 100px;
+.gridquizzes img{
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.5) 64.58%, #000000 100%), url(image.png);
+    border-radius: 5px;
+   width: 340px;
+   height: 181px;
+   margin-top: 10px;
 }
-li p{
+.gridquizzes p{
     font-family: 'Roboto', sans-serif;
+    font-style: normal;
     font-weight: 400;
     font-size: 19px;
     color: #FFFFFF;
+    line-height: 22px;
     position: absolute;
-    
     right: auto;
+    padding: 20px;
 }
 @media (max-width: 1100px){
     main{
