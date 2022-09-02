@@ -98,7 +98,7 @@ body{
     margin-top: 77px;
 }
 
-.todosquiz{
+.titulo3{
     color:#000000;
     font-family: 'Roboto';
     font-style: normal;
@@ -125,6 +125,7 @@ body{
 li img{
    width: 235px;
    height: 100px;
+   cursor: pointer;
 }
 li p{
     font-family: 'Roboto', sans-serif;
@@ -132,7 +133,7 @@ li p{
     font-size: 19px;
     color: #FFFFFF;
     position: absolute;
-    
+    bottom: 0px;
     right: auto;
 }
 @media (max-width: 1100px){
@@ -211,6 +212,7 @@ li p{
     display: flex;
     width: 100%;
     margin-top:px;
+    background-color: #EC362D;
 }
 
 .layout-seus-quizes .todosquiz{

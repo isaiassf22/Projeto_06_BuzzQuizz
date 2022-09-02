@@ -1,3 +1,4 @@
+let containerDeQuizes=''
 function PedirQuizes(){
     const promisse=axios.get('https://mock-api.driven.com.br/api/v4/buzzquizz/quizzes')
     promisse.then(receberQuizes)
@@ -7,11 +8,11 @@ PedirQuizes();
 function receberQuizes(resposta){
     console.log(resposta)
     console.log(resposta.data)
-    let containerDeQuizes=resposta.data
+     containerDeQuizes=resposta.data
      let gradeQuiz=document.querySelector('.gridquizzes')
      let renderizando='' //renderizar os quizzes
     for(i=0;i<containerDeQuizes.length;i++){
-            renderizando+= `<li>
+            renderizando+= `<li data-id="${containerDeQuizes[i].id}" onclick="escolherQuiz(this)">
             <img src="${containerDeQuizes[i].image}" alt="">
             <p>${containerDeQuizes[i].title}</p>
         </li>
@@ -19,5 +20,22 @@ function receberQuizes(resposta){
         }
     console.log(renderizando)
     gradeQuiz.innerHTML=renderizando
-}
+    
 
+
+
+}
+ // essa função liga a imagem selecionada com o quizz na api pra abrir a tela 2
+function escolherQuiz(x){
+    let quizSelecionado=Number(x.dataset.id)
+    console.log(quizSelecionado)
+    let listaDeId=[]
+    for(i=0;i<containerDeQuizes.length;i++){
+        listaDeId.push(containerDeQuizes[i].id)
+    }
+    console.log(listaDeId)
+    if(listaDeId.includes(quizSelecionado)===true){
+       
+    }
+}
+    
