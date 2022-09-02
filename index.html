@@ -27,14 +27,16 @@
     </header>
     
         <main>
+            
+
             <!-- ABA DE QUIZES DO USUARIO -->
             <div class="quizes-usuario">
                 <p class="nenhumquiz">Você não criou nenhum <br>quizz ainda :(</p>
-                <button class="criarquizbotao">Criar Quizz</button>
+                <button class="criarquizbotao" onclick="criarQuizInciar()">Criar Quizz</button>
             </div>
 
             <!-- ABA DE QUIZES DO USUARIO/ ESTA BUGADO-->
-            <div class="layout-seus-quizes">
+            <div class="layout-seus-quizes escondido">
                 <div class="titulo-icone">
                     <p class="todosquiz">Seus Quizzes</p>
                         <ion-icon class="icone-novo-quiz" name="add-circle"></ion-icon> 
@@ -59,8 +61,8 @@
                     
                     </ul>
                 </div>
-            <!--
-                <div class="banner-superior">
+           
+                <div class="banner-superior escondido">
                     <img src="./images/castle.png">
                     <p class="teste">O quão Potterhead é você?</p>
             </div>
@@ -150,7 +152,54 @@
                                 </main>
                             </li>
                         </ul>
-            -->
+            
+
+                        <div class="comecocriarquiz escondido">
+                            <p>Comece pelo começo</p>
+                            <div class="inputs">
+                                <input type="text" placeholder="Título do seu quiz">
+                                <input type="text" placeholder="URL da imagem do seu quizz">
+                                <input type="text" placeholder="Quantidade de perguntas do quizz">
+                                <input type="text" placeholder="Quantidade de níveis do quizz">
+                                <button class="botaoCriarPerguntas">Proseguir para criar perguntas</button>
+                            </div>   
+            </div>
+
+            <div class="decidaniveis">
+                <p>Crie suas perguntas</p>
+                <div class="pergunta1 fechado">
+                    <p>Pergunta 1</p>
+                    <img src="./images/Vector.svg">
+                </div>
+
+                <div class="pergunta1-aberto">
+                    
+                </div>
+
+                <div class="pergunta2 fechado">
+                    <p>Pergunta 2</p>
+                    <img src="./images/Vector.svg">
+                </div>
+
+                <div class="pergunta1-aberto">
+                    
+                </div>
+
+
+                <div class="pergunta3 fechado">
+                    <p>Pergunta 3</p>
+                    <img src="./images/Vector.svg">
+                </div>
+
+
+                <div class="pergunta1-aberto">
+
+                </div>
+            </div>
+
+
+                        
+
         </main>
        
 
@@ -158,6 +207,7 @@
         <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
         <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
         <script src="js/script.js"></script>
+        <script src="js/mateus.js"></script>
 </body>
 </html>
         

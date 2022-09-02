@@ -36,7 +36,7 @@ function escolherQuiz(x){
     }
     console.log(listaDeId)
     if(listaDeId.includes(quizSelecionado)===true){
-       
+        exibirquiz();
     }
 }
     
@@ -46,7 +46,7 @@ function erro(_errou) {
 }
 
 function exibirquiz(quizescolhido){
-    console.log('clicou');
+   
     let quizusuario =document.querySelector('.quizes-usuario');
     let quiztodos =document.querySelector('.conteiner-de-quizes');
     let abaquiz = document.querySelector('.div-perguntas');

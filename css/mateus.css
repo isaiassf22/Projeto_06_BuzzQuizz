@@ -1,0 +1,114 @@
+@media (max-width:1100px){
+    .comecocriarquiz{
+        margin-top: 100px;
+        height: 550px;
+    }
+    .comecocriarquiz .inputs input{
+        width:340px;
+    }
+}
+
+/* COMECO CRIAR QUIZ */
+
+.comecocriarquiz{
+    width:350px;
+    margin-top: 100px;
+    height: 550px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.comecocriarquiz p{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 23px;
+}
+
+.comecocriarquiz input{
+    background: #FFFFFF;
+    border: 1px solid #D1D1D1;
+    border-radius: 5px;
+    box-sizing: border-box;
+    width: 564px;
+    height: 46px; 
+    font-family: 'Roboto';
+    font-style: italic;
+    font-weight: 400;
+    font-size: 19px;
+    line-height: 22px;
+    color: gray;
+    margin-top: 10px;
+}
+
+.inputs{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 31px;
+}
+
+.comecocriarquiz button{
+    background: #EC362D;
+    border-radius: 15px;
+    width: 324px;
+    height: 54px;
+    margin-top: 50px;
+     }
+
+
+     .botaoCriarPerguntas {
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 23px;
+        color: #FFFFFF;
+        margin-top: 31px;
+     }
+
+/* FIM CRIAR QUIZ */
+
+/* COMECO CRIAR PERGUNTAS */
+
+
+.fechado{
+    background: #FFFFFF;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05);
+    width:375px;
+    height: 74px;
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 20px;
+}
+
+.fechado p{
+    font-family: 'Roboto';
+font-style: normal;
+font-weight: 700;
+font-size: 20px;
+line-height: 23px;
+display: flex;
+align-items: center;
+color: #000000;
+
+}
+
+.decidaniveis{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.decidaniveis p{
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 700;
+font-size: 20px;
+line-height: 23px;
+color: #000000;
+}
