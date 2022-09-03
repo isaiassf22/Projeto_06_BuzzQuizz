@@ -55,7 +55,6 @@ function exibirquiz(quizescolhido){
     quiztodos.style.display='none';
     abaquiz.classList.remove("escondido");
     banner.classList.remove("escondido");
-    console.log(quizescolhido.data);
 }
 
 
