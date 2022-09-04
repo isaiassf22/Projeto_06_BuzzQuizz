@@ -39,7 +39,20 @@ function receberQuizes(resposta){
             exibirquiz()
             
             console.log(containerDeQuizes[i])
-            console.log(containerDeQuizes[i].image)
+            //lista para embaralhar as respostas
+            let listaEmbaralha1=[[containerDeQuizes[i].questions[0].answers[0].image,containerDeQuizes[i].questions[0].answers[0].text],[containerDeQuizes[i].questions[0].answers[1].image,containerDeQuizes[i].questions[0].answers[1].text],
+            [containerDeQuizes[i].questions[0].answers[0].image,containerDeQuizes[i].questions[0].answers[0].text],[containerDeQuizes[i].questions[0].answers[1].image,containerDeQuizes[i].questions[0].answers[1].text]]
+            
+            let listaEmbaralha2=[[containerDeQuizes[i].questions[1].answers[0].image,containerDeQuizes[i].questions[1].answers[0].text],[containerDeQuizes[i].questions[1].answers[1].image,containerDeQuizes[i].questions[1].answers[1].text],
+            [containerDeQuizes[i].questions[1].answers[0].image,containerDeQuizes[i].questions[1].answers[0].text],[containerDeQuizes[i].questions[1].answers[1].image,containerDeQuizes[i].questions[1].answers[1].text]]
+            
+            let listaEmbaralha3=[[containerDeQuizes[i].questions[2].answers[0].image,containerDeQuizes[i].questions[2].answers[0].text],[containerDeQuizes[i].questions[2].answers[1].image,containerDeQuizes[i].questions[2].answers[1].text],
+            [containerDeQuizes[i].questions[2].answers[0].image,containerDeQuizes[i].questions[2].answers[0].text],[containerDeQuizes[i].questions[2].answers[1].image,containerDeQuizes[i].questions[2].answers[1].text]]
+            
+            listaEmbaralha1.sort(()=> Math.random()-0.5)
+            listaEmbaralha2.sort(()=> Math.random()-0.5)
+            listaEmbaralha3.sort(()=> Math.random()-0.5)
+
             banner.innerHTML=` <img src="${containerDeQuizes[i].image}">
             <p class="teste">${containerDeQuizes[i].title}</p>
             `
@@ -49,21 +62,21 @@ function receberQuizes(resposta){
             </div>
 
             <div class="grid-fotos">
-                <div class="primeira opcao">
-                    <img src="${containerDeQuizes[i].questions[0].answers[0].image}">
-                    <p>${containerDeQuizes[i].questions[0].answers[0].title}</p>
+                <div class="primeira opcao" id="um">
+                    <img src="${listaEmbaralha1[0][0]}">
+                    <p>${listaEmbaralha1[0][1]}</p>
                 </div>
-                <div class="segunda opcao">
-                    <img src="${containerDeQuizes[i].questions[0].answers[1].image}">
-                    <p>${containerDeQuizes[i].questions[0].answers[1].title}</p>
+                <div class="segunda opcao" id="dois">
+                    <img src="${listaEmbaralha1[1][0]}">
+                    <p>${listaEmbaralha1[1][1]}</p>
+                </div> 
+                <div class="terceira opcao" id="tres">
+                    <img src="${listaEmbaralha1[2][0]}">
+                    <p>${listaEmbaralha1[2][1]}</p>
                 </div>
-                <div class="terceira opcao">
-                    <img src="${containerDeQuizes[i].questions[0].answers[0].image}">
-                    <p>${containerDeQuizes[i].questions[0].answers[0].title}</p>
-                </div>
-                <div class="quarta opcao">
-                    <img src="${containerDeQuizes[i].questions[0].answers[1].image}">
-                    <p>${containerDeQuizes[i].questions[0].answers[1].title}</p>
+                <div class="quarta opcao" id="quatro">
+                    <img src="${listaEmbaralha1[3][0]}">
+                    <p>${listaEmbaralha1[3][1]}</p>
                 </div>
             </div>
             <li class="conteiner-pergunta">
@@ -72,21 +85,21 @@ function receberQuizes(resposta){
                     </div>
 
                     <div class="grid-fotos">
-                        <div class="primeira opcao">
-                            <img src="${containerDeQuizes[i].questions[1].answers[0].image}">
-                            <p>${containerDeQuizes[i].questions[1].answers[0].title}</p>
+                        <div class="primeira opcao" id="cinco">
+                            <img src="${listaEmbaralha2[0][0]}">
+                            <p>${listaEmbaralha2[0][1]}</p>
                         </div>
-                        <div class="segunda opcao">
-                            <img src${containerDeQuizes[i].questions[1].answers[1].image}">
-                            <p>${containerDeQuizes[i].questions[1].answers[1].title}</p>
+                        <div class="segunda opcao" id="seis">
+                            <img src${listaEmbaralha2[1][0]}">
+                            <p>${listaEmbaralha2[1][1]}</p>
                         </div>
-                        <div class="terceira opcao">
-                            <img src="${containerDeQuizes[i].questions[1].answers[0].image}">
-                            <p>${containerDeQuizes[i].questions[1].answers[0].title}</p>
+                        <div class="terceira opcao" id="sete">
+                            <img src="${listaEmbaralha2[2][0]}">
+                            <p>${listaEmbaralha2[2][1]}</p>
                         </div>
-                        <div class="quarta opcao">
-                            <img src="${containerDeQuizes[i].questions[1].answers[1].image}">
-                            <p>${containerDeQuizes[i].questions[1].answers[1].title}</p>
+                        <div class="quarta opcao" id="oito">
+                            <img src="${listaEmbaralha2[3][0]}">
+                            <p>${listaEmbaralha2[3][1]}</p>
                         </div>
                     </div>
                     <li class="conteiner-pergunta">
@@ -95,29 +108,27 @@ function receberQuizes(resposta){
                     </div>
 
                     <div class="grid-fotos">
-                        <div class="primeira opcao">
-                            <img src="${containerDeQuizes[i].questions[2].answers[0].image}">
-                            <p>${containerDeQuizes[i].questions[2].answers[0].title}</p>
+                        <div class="primeira opcao" id="nove">
+                            <img src="${listaEmbaralha3[0][0]}">
+                            <p>${listaEmbaralha3[0][1]}</p>
                         </div>
-                        <div class="segunda opcao">
-                            <img src="${containerDeQuizes[i].questions[2].answers[1].image}">
-                            <p>${containerDeQuizes[i].questions[2].answers[1].title}</p>
+                        <div class="segunda opcao" id="dez">
+                            <img src="${listaEmbaralha3[1][0]}">
+                            <p>${listaEmbaralha3[1][1]}</p>
                         </div>
-                        <div class="terceira opcao">
-                            <img src="${containerDeQuizes[i].questions[2].answers[0].image}">
-                            <p>${containerDeQuizes[i].questions[2].answers[0].title}</p>
+                        <div class="terceira opcao" id="onze">
+                            <img src="${listaEmbaralha3[2][0]}">
+                            <p>${listaEmbaralha3[2][1]}</p>
                         </div>
-                        <div class="quarta opcao">
-                            <img src="${containerDeQuizes[i].questions[2].answers[1].image}">
-                            <p>${containerDeQuizes[i].questions[2].answers[1].title}</p>
+                        <div class="quarta opcao" id="doze">
+                            <img src="${listaEmbaralha3[3][0]}">
+                            <p>${listaEmbaralha3[3][1]}</p>
                         </div>
                     </div>
     
             `
     }
     }
-    console.log(listaDeId)
-    
 }
 
     
