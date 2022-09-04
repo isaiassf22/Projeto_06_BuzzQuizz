@@ -7,8 +7,6 @@ function PedirQuizes(){
 PedirQuizes();
 
 function receberQuizes(resposta){
-    console.log(resposta)
-    console.log(resposta.data)
      containerDeQuizes=resposta.data
      let gradeQuiz=document.querySelector('.gridquizzes')
      let renderizando='' //renderizar os quizzes
@@ -20,7 +18,7 @@ function receberQuizes(resposta){
         `
         }
     
-    gradeQuiz.innerHTML=renderizando
+    gradeQuiz.innerHTML=renderizando;
     
 
 
@@ -55,6 +53,7 @@ function exibirquiz(quizescolhido){
     quiztodos.style.display='none';
     abaquiz.classList.remove("escondido");
     banner.classList.remove("escondido");
+
 }
 
 

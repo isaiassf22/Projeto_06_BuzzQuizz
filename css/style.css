@@ -51,7 +51,7 @@ body{
 
 
 .quizes-usuario{
-    width: 70%;
+    width: 1051px;
     height: 181px;
     text-align: center;
     border: 1px dashed #D4D4D4;
@@ -95,7 +95,7 @@ body{
 }
 
 .conteiner-de-quizes{
-    width: 70%;
+    width: 1051px;
     min-height: 700px;
     margin-top: 77px;
 }
@@ -120,7 +120,6 @@ body{
     
 }
 .gridquizzes li{
-    padding: 20px;
     height: auto;
     position: relative;
     display: flex;
@@ -129,11 +128,13 @@ body{
     cursor: pointer;
 }
 .gridquizzes img{
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.5) 64.58%, #000000 100%), url(image.png);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.5) 64.58%, #000000 100%);
     border-radius: 5px;
-   width: 340px;
-   height: 181px;
-   margin-top: 10px;
+    width: 340px;
+    height: 181px;
+    margin-top: 10px;
+   
+
 }
 .gridquizzes p{
     font-family: 'Roboto', sans-serif;

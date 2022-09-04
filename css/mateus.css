@@ -17,6 +17,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+
 }
 
 .comecocriarquiz p{
@@ -56,6 +57,9 @@
     width: 324px;
     height: 54px;
     margin-top: 50px;
+    border: none;
+    outline: none;
+    cursor: pointer;
      }
 
 
@@ -84,6 +88,7 @@
     align-items: center;
     justify-content: space-between;
     padding: 0px 20px;
+    cursor: pointer;
 }
 
 .fechado p{
@@ -98,7 +103,21 @@ color: #000000;
 
 }
 
+.crie-pergunta{
+    margin-top: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 23px;
+    color: #000000;
+}
+
 .decidaniveis{
+    margin-top: 15px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -111,4 +130,42 @@ font-weight: 700;
 font-size: 20px;
 line-height: 23px;
 color: #000000;
+}
+
+.aberto{
+    margin-top: 150px;
+    width: 600px;
+    height: 825px;
+    display: flex;
+    flex-direction: column;
+    background: #FFFFFF;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05);
+}
+
+.aberto p{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 23px;
+    color: #000000;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+.aberto input{
+    background: #FFFFFF;
+    border: 1px solid #D1D1D1;
+    border-radius: 5px;
+    box-sizing: border-box;
+    width: 564px;
+    height: 46px; 
+    font-family: 'Roboto';
+    font-style: italic;
+    font-weight: 400;
+    font-size: 19px;
+    line-height: 22px;
+    color: gray;
+    margin-top: 15px;
+    margin-left: 20px;
 }
