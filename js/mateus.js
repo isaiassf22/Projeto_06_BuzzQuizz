@@ -10,7 +10,6 @@ let titulo;
 let imagem;
 let qtdperguntas;
 let qtdniveis;
-let url;
 
 
 
@@ -125,21 +124,22 @@ function validarquizinicial(){
     
     function checkUrl(string) {
         try {
-        url = new URL(string)
-         url = true;
+         let url = new URL(string)
+         funciona = true;
        } catch(err) {
-           url = false;
+           funciona = false;
        }
-       checkUrl(imagem)
      }
+
+     checkUrl(imagem);
 
     if(titulo == undefined || titulo == "" || titulo.length < 20){
         alert("O seu titulo esta vazio ou esta com menos de 20 caracteres");
-    }else if(imagem == undefined || imagem == "" || url === false){
+    }else if(imagem == undefined || imagem == "" || funciona === false){
         alert("A sua imagem precisa esta no formato de url,tente novamente");
-    }else if(qtdperguntas == undefined || qtdperguntas == "" || qtdperguntas < 2){
+    }else if(qtdperguntas == NaN || qtdperguntas == "" || qtdperguntas < 2){
         alert("A quantidade de perguntas deve ser maior que dois e nao pode estar vazio :D");
-    }else if(qtdniveis == undefined || qtdniveis == "" || qtdniveis < 2){
+    }else if(qtdniveis == NaN || qtdniveis == "" || qtdniveis < 2){
         alert("A quantidade de niveis deve ser maior que dois");
     }else{
         comecar.innerHTML="";
@@ -155,30 +155,26 @@ function aparecerperguntas(){
 
    for(let i = 0; i < qtdperguntas; i++){
        comecar.innerHTML+=`<div class="decidaniveis" onclick="abrirpergunta(this)">
-       <div class="pergunta${[i]} fechado">
+       <div class="pergunta${[i]}">
            <p>Pergunta ${Number([i]) + 1}</p>
            <img src="./images/Vector.svg">
        </div> 
-                <div class="pergunta${Number[i]+ 1} aberto">
-                    <p>Pergunta ${Number[i]+ 1}</p>
-                    <input type="text" placeholder="Texto da pergunta" class="textoPergunta1">
-                    <input type="text" placeholder="Cor de fundo da pergunta" class="corPergunta1">
+                <div class="pergunta ${Number([i]) + 1} aberto">
+                    <p>Pergunta ${Number([i]) + 1} </p>
+                    <input type="text" placeholder="Texto da pergunta" class="textoPergunta${Number([i]) + 1}">
+                    <input type="text" placeholder="Cor de fundo da pergunta" class="corPergunta${Number([i]) + 1}">
                     <p>Resposta Correta</p>
-                    <input type="text" placeholder="Resposta correta" class="respostaCorreta1">
-                    <input type="text" placeholder="URL da imagem" class="urlImagemcerta1">
+                    <input type="text" placeholder="Resposta correta" class="respostaCorreta${Number([i]) + 1}">
+                    <input type="text" placeholder="URL da imagem" class="urlImagemcerta${Number([i]) + 1}">
                     <p>Repostas incorretas</p>
-                    <input type="text" placeholder="Resposta incorreta 1" class="incorreta1">
-                    <input type="text" placeholder="URL da imagem 1" class="urlIncorreta1">
-                    <input type="text" placeholder="Resposta incorreta 2" class="incorreta2">
-                    <input type="text" placeholder="URL da imagem 2" class="urlIncorreta2">
-                    <input type="text" placeholder="Resposta incorreta 3" class="incorreta3">
-                    <input type="text" placeholder="URL da imagem 3" class="urlIncorreta3">
-                </div> -->`;
+                    <input type="text" placeholder="Resposta incorreta 1" class="incorreta${Number([i]) + 1}">
+                    <input type="text" placeholder="URL da imagem 1" class="urlIncorreta${Number([i]) + 1}">
+                    <input type="text" placeholder="Resposta incorreta 2" class="incorreta${Number([i]) + 2}">
+                    <input type="text" placeholder="URL da imagem 2" class="urlIncorreta${Number([i]) + 2}">
+                    <input type="text" placeholder="Resposta incorreta 3" class="incorreta${Number([i]) + 3}">
+                    <input type="text" placeholder="URL da imagem 3" class="urlIncorreta${Number([i]) + 1}">
+                </div> `;
    }
 }
 
 
-
-function abrirpergunta(pergunta){
-    
-}
