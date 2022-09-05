@@ -158,23 +158,6 @@ function aparecerperguntas(){
 }
 
 
-/* function validarperguntas(){
-    if(textop.length < 20){
-        alert("O texto da pergunta deve ter mais de 20 caracteres");
-    } else if(corpe.length < 6){
-        alert("A cor da pergunta deve ter mais de 6 caracteres");
-    } else if(rescp.length < 1){
-        alert("A resposta correta deve ter mais de 1 caracter");
-    } else if (urlImagemcerta.length < 10){
-        alert("A url da imagem deve ter mais de 10 caracteres");
-    }else{
-        guardarinputs()
-    }
- 
-
-   
-}
-*/
 
 function guardarinputs(){
     for(let i = 0; i < qtdperguntas; i++){
@@ -203,7 +186,8 @@ function objeto(){
         goiaba[i] = {
             title: tituloperguntas[i],
             color: corp[i],
-            answers:[{
+            answers:[
+                {
                 text: respostacorreta[i],
                 image: urlrespostacorreta[i],
                 isCorrectAnswer: true
@@ -321,7 +305,7 @@ function criarquiz(){
         questions: [goiaba],
         leveis: [caramelo]
     };
-    console.log(quizcriado);
+
     comecar.innerHTML = "";
     comecar.innerHTML = `
     <ul class="finalcriar">
@@ -334,11 +318,24 @@ function criarquiz(){
     <li><button class="botaoCriarPerguntas">Acessar Quizz</button></li>
     <li><p onclick="reloadpage()" class="home">Voltar para home</p></li>
     </ul>`
+
+    console.log(quizcriado)
+    const promessa = axios.post('https://mock-api.bootcamp.respondeai.com.br/api/v2/buzzquizz/quizzes', quizcriado);
+    promessa.then(sucesso);
+    promessa.catch(erro => console.log(erro));
+
+
+
 }
 
+function erro(){
+    alert('Erro ao criar quiz');
+}
 
-
-
+function sucesso(){
+    alert('Quiz criado com sucesso');
+    window.localStorage.setItem('quizusuario', quizcriado);
+}
 
 function reloadpage(){
     location.reload();
