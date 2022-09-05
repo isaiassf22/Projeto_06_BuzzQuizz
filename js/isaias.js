@@ -12,6 +12,12 @@ function respostaSelecionada(parametro){
     else{
        seletor.classList.add('borda-laranja')
     }
+    const respostaEscolhida = document.querySelector("parametro");
+    const pai = parametro.parentNode;
+    for(let i=0; i < pai.children.length; i++){
+        pai.children[i].classList.add('clarear');
+    }
+    parametro.classList.remove('clarear');
 }
 
 /*if(bordaCheck!==null){

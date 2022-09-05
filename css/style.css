@@ -67,7 +67,9 @@ body{
 .escondido{
     display: none;
 }
-
+.clarear{
+    filter: opacity(40%) saturate(90%);
+}
 .criarquizbotao{
     width: 151px;
     height: 40px;
