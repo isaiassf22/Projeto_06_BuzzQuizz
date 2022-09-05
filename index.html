@@ -35,14 +35,14 @@
            
             <div class="quizes-usuario">
                 <p class="nenhumquiz">Você não criou nenhum <br>quizz ainda :(</p>
-                <button class="criarquizbotao" onclick="criarQuizInciar()">Criar Quizz</button>
+                <button class="criarquizbotao" onclick="criarQuizInciar()" data-identifier="create-quizz">Criar Quizz</button>
             </div>
 
             <!-- ABA DE QUIZES DO USUARIO/ ESTA BUGADO-->
-            <div class="layout-seus-quizes escondido">
+            <div class="layout-seus-quizes escondido" data-identifier="user-quizzes">
                 <div class="titulo-icone">
                     <p class="todosquiz">Seus Quizzes</p>
-                        <ion-icon class="icone-novo-quiz" name="add-circle" onclick="criarQuizInciar()"></ion-icon> 
+                        <ion-icon class="icone-novo-quiz" name="add-circle" onclick="criarQuizInciar()" data-identifier="create-quizz"></ion-icon> 
                 </div>
                 <ul class="seus-quizes">
                     <li class="teste">
@@ -58,9 +58,9 @@
 
             <!-- ABA DE QUIZES QUANDO NAO HÁ NENHUM -->
            
-            <div class="conteiner-de-quizes">
+            <div class="conteiner-de-quizes" >
                     <h1 class="titulo3">Todos os Quizzes</h1>
-                    <ul class="gridquizzes">
+                    <ul class="gridquizzes"data-identifier="general-quizzes">
                     
                     </ul>
                 </div>
@@ -73,7 +73,7 @@
 
             <ul class="div-perguntas escondido">
                 
-                 <li class="resultadoquiz">
+                 <li class="resultadoquiz escondido" data-identifier="quizz-result">
                     <header class="resultado">
                         <p>88% de acerto:você é praticamente um aluno de Hogwarts</p>
                     </header>

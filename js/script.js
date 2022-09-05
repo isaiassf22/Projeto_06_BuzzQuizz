@@ -16,7 +16,7 @@ function receberQuizes(resposta){
      let gradeQuiz=document.querySelector('.gridquizzes')
      let renderizando='' //renderizar os quizzes
     for(i=0;i<containerDeQuizes.length;i++){
-            renderizando+= `<li data-id="${containerDeQuizes[i].id}" onclick="escolherQuiz(this)">
+            renderizando+= `<li data-id="${containerDeQuizes[i].id}" onclick="escolherQuiz(this)" data-identifier="quizz-card">
             <div class="gradiente"></div>
             <img src="${containerDeQuizes[i].image}" alt="">       
             <p>${containerDeQuizes[i].title}</p>
@@ -53,7 +53,7 @@ function receberQuizes(resposta){
                 for(let r=0;r<objetoSelecionado.questions[p].answers.length;r++){ // r=resposta
                     
                    continuacao+=`
-                   <div class="n${r+1}ª opcao" data-check="${containerDeQuizes[i].questions[p].answers[r].isCorrectAnswer}" onclick="respostaSelecionada(this)">
+                   <div class="n${r+1}ª opcao" data-check="${containerDeQuizes[i].questions[p].answers[r].isCorrectAnswer}" onclick="respostaSelecionada(this)" data-identifier="question">
                        <img class="imagem" src="${containerDeQuizes[i].questions[p].answers[r].image}">
                        <p>${containerDeQuizes[i].questions[p].answers[r].text}</p>
                    </div>       
@@ -64,7 +64,7 @@ function receberQuizes(resposta){
                 <div class="pergunta">
                     <p>${containerDeQuizes[i].questions[p].title}</p>
                 </div>
-                <div class="grid-fotos">${continuacao}</div`
+                <div class="grid-fotos" data-identifier="answer">${continuacao}</div`
                 
                    
                  

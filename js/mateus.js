@@ -10,7 +10,8 @@ let titulonovo;
 let imagemnovo;
 let qtdperguntas;
 let qtdniveis;
-caramelo={}
+caramelo=[];
+let goiaba = [];
 titulonivel = []
 pontuacaonivel = []
 imagemnivel = []
@@ -19,7 +20,6 @@ descricaonivel = []
 let perguntas = [];
 
 
-let goiaba = {}
 
 
 
@@ -114,12 +114,12 @@ function aparecerperguntas(){
 
    for(let i = 0; i < qtdperguntas; i++){
        comecar.innerHTML+=`
-       <div class="perguntajaca" onclick="abrirpergunta(this)">
+       <div class="perguntajaca" onclick="abrirpergunta(this)" data-identifier="expand">
        <div class="perguntafechada${Number([i]) + 1} fechado">
            <p>Pergunta${Number([i]) + 1}</p>
            <img src="./images/Vector.svg">
        </div> 
-                <div class="pergunta${Number([i]) + 1} aberto tamanho">
+                <div class="pergunta${Number([i]) + 1} aberto tamanho" data-identifier="question-form">
                     <p>Pergunta ${Number([i]) + 1} </p>
                     <input type="text" placeholder="Texto da pergunta" class="textoPergunta${Number([i]) + 1} textop">
                     <input type="text" placeholder="Cor de fundo da pergunta" class="corPergunta${Number([i]) + 1} corpe">
@@ -183,7 +183,7 @@ function guardarinputs(){
 
 function objeto(){
     for(let i = 0; i < qtdperguntas; i++){
-        goiaba[i] = {
+        goiaba.push({
             title: tituloperguntas[i],
             color: corp[i],
             answers:[
@@ -208,7 +208,7 @@ function objeto(){
                 isCorrectAnswer: false
             }
             ],  
-    }
+    });
     
 }
     console.log(goiaba);
@@ -234,11 +234,12 @@ function decidaniveis(){
     for(let i = 0; i < qtdniveis; i++){
         comecar.innerHTML+=`
         <div class="niveisjaca" onclick="abrirnivel(this)">
-        <div class="nivelfechado${Number([i]) + 1} fechado">
+        <div class="nivelfechado${Number([i]) + 1} fechado" data-identifier="expand">
             <p>Nível${Number([i]) + 1}</p>
             <img src="./images/Vector.svg">
+            
         </div> 
-                 <div class="nivel${Number([i]) + 1} aberto niv">
+                 <div class="nivel${Number([i]) + 1} aberto niv" data-identifier="level">
                      <p>Nível ${Number([i]) + 1} </p>
                      <input type="text" placeholder="Título do nível" class="tituloNivel${Number([i]) + 1}">
                      <input type="text" placeholder="% de acerto minima" class="pontuacaoNivel${Number([i]) + 1}">
@@ -269,18 +270,16 @@ function guardarniveis(){
         imagemnivel.push(document.querySelector(`.urlImagemNivel${Number([i]) + 1}`.valueOf()).value);
         descricaonivel.push(document.querySelector(`.descricaoNivel${Number([i]) + 1}`.valueOf()).value);
 
-        caramelo[i] = {
-            leveis: [{
-                title: titulonivel[i],
-                image: imagemnivel[i],
-                text: descricaonivel[i],
-                minValue: Math.ceil(pontuacaonivel[i])
-            },
-            ]
+        caramelo.push({
+            title: titulonivel[i],
+            image: imagemnivel[i],
+            text: descricaonivel[i],
+            minValue: Math.ceil(pontuacaonivel[i])
+        })
+               
         }
     }
 
-}
 
 
 
@@ -302,8 +301,8 @@ function criarquiz(){
     quizcriado = {
         title: titulonovo,
         image: imagemnovo,
-        questions: [goiaba],
-        leveis: [caramelo]
+        questions: goiaba,
+        levels: caramelo
     };
 
     comecar.innerHTML = "";
@@ -321,7 +320,7 @@ function criarquiz(){
 
     console.log(quizcriado)
     const promessa = axios.post('https://mock-api.bootcamp.respondeai.com.br/api/v2/buzzquizz/quizzes', quizcriado);
-    console.log(quizcriado)
+    console.log(caramelo);
     promessa.then(sucesso);
     promessa.catch(erro => console.log(erro));
 
