@@ -4,7 +4,7 @@ const seusQuizes = document.querySelector('.layout-seus-quizes');
 const quizesGerais = document.querySelector('.conteiner-de-quizes');
 const iniciocriar = document.querySelector('.comecocriarquiz');
 const iniciocriar2 = document.querySelector('.decidaniveis');
-const comecar = document.querySelector('.comecar');
+const comecar = document.querySelector('.decidaperguntas');
 
 let titulo;
 let imagem;
@@ -12,82 +12,20 @@ let qtdperguntas;
 let qtdniveis;
 
 
-
-let novoquiz = {
-	title: "titulo",
-	image: "https://http.cat/411.jpg",
-	questions: [
-		{
-			title: "Título da pergunta 1",
-			color: "#123456",
-			answers: [
-				{
-					text: "Texto da resposta 1",
-					image: "https://http.cat/411.jpg",
-					isCorrectAnswer: true
-				},
-				{
-					text: "Texto da resposta 2",
-					image: "https://http.cat/412.jpg",
-					isCorrectAnswer: false
-				}
-			]
-		},
-		{
-			title: "Título da pergunta 2",
-			color: "#123456",
-			answers: [
-				{
-					text: "Texto da resposta 1",
-					image: "https://http.cat/411.jpg",
-					isCorrectAnswer: true
-				},
-				{
-					text: "Texto da resposta 2",
-					image: "https://http.cat/412.jpg",
-					isCorrectAnswer: false
-				}
-			]
-		},
-		{
-			title: "Título da pergunta 3",
-			color: "#123456",
-			answers: [
-				{
-					text: "Texto da resposta 1",
-					image: "https://http.cat/411.jpg",
-					isCorrectAnswer: true
-				},
-				{
-					text: "Texto da resposta 2",
-					image: "https://http.cat/412.jpg",
-					isCorrectAnswer: false
-				}
-			]
-		}
-	],
-	levels: [
-		{
-			title: "Título do nível 1",
-			image: "https://http.cat/411.jpg",
-			text: "Descrição do nível 1",
-			minValue: 0
-		},
-		{
-			title: "Título do nível 2",
-			image: "https://http.cat/412.jpg",
-			text: "Descrição do nível 2",
-			minValue: 50
-		}
-	]
+let parte1 = {
+    title: titulo,
+    image: imagem,
 }
+
+let perguntas = [];
+
 
 
 
 
 
 function criarQuizInciar(){
-
+    comecar.style.display='flex';
     naoQuiz.style.display='none';
     seusQuizes.style.display='none';
     quizesGerais.style.display='none';
@@ -98,7 +36,7 @@ function criarQuizInciar(){
         <input type="text" placeholder="URL da imagem do seu quizz" class="imagemquiznovo">
         <input type="text" placeholder="Quantidade de perguntas do quizz" class="quantidadeperguntasnovo">
         <input type="text" placeholder="Quantidade de níveis do quizz" class="quantidadeniveisnovo">
-        <button class="botaoCriarPerguntas" onclick=" validarquizinicial()">Proseguir para criar perguntas</button>
+        <button class="botaoCriarPerguntas" onclick="validarquizinicial()">Proseguir para criar perguntas</button>
     </div>   
 </div>`;
 
@@ -154,12 +92,13 @@ function aparecerperguntas(){
    </div>`;
 
    for(let i = 0; i < qtdperguntas; i++){
-       comecar.innerHTML+=`<div class="decidaniveis" onclick="abrirpergunta(this)">
-       <div class="pergunta${[i]}">
-           <p>Pergunta ${Number([i]) + 1}</p>
+       comecar.innerHTML+=`
+       <div class="perguntajaca" onclick="abrirpergunta(this)">
+       <div class="perguntafechada${Number([i]) + 1} fechado">
+           <p>Pergunta${Number([i]) + 1}</p>
            <img src="./images/Vector.svg">
        </div> 
-                <div class="pergunta ${Number([i]) + 1} aberto">
+                <div class="pergunta${Number([i]) + 1} aberto tamanho">
                     <p>Pergunta ${Number([i]) + 1} </p>
                     <input type="text" placeholder="Texto da pergunta" class="textoPergunta${Number([i]) + 1}">
                     <input type="text" placeholder="Cor de fundo da pergunta" class="corPergunta${Number([i]) + 1}">
@@ -172,9 +111,131 @@ function aparecerperguntas(){
                     <input type="text" placeholder="Resposta incorreta 2" class="incorreta${Number([i]) + 2}">
                     <input type="text" placeholder="URL da imagem 2" class="urlIncorreta${Number([i]) + 2}">
                     <input type="text" placeholder="Resposta incorreta 3" class="incorreta${Number([i]) + 3}">
-                    <input type="text" placeholder="URL da imagem 3" class="urlIncorreta${Number([i]) + 1}">
-                </div> `;
+                    <input type="text" placeholder="URL da imagem 3" class="urlIncorreta${Number([i]) + 3}">
+                </div>
+                </div> 
+                `;
+
+          
+                   
    }
+
+
+
+    comecar.innerHTML+=`<button class="botaoCriarPerguntas" onclick="guardarinputs()">Prosseguir pra criar níveis</button>`
+
+
+   const primeiraperguntafechada = document.querySelector('.perguntafechada1');
+  const primeirapergunta = document.querySelector('.pergunta1'); 
+
+    primeiraperguntafechada.classList.add('lacrado');
+    primeirapergunta.style.display='flex';
+
+
+
+
 }
 
 
+tituloperguntas = []
+corp = []
+respostacorreta = []
+urlrespostacorreta = []
+respostaincorreta1 = []
+urlrespostaincorreta1 = []
+respostaincorreta2 = []
+urlrespostaincorreta2 = []
+respostaincorreta3 = []
+urlrespostaincorreta3 = []
+
+function guardarinputs(){
+    for(let i = 0; i < qtdperguntas; i++){
+        tituloperguntas.push(document.querySelector(`.textoPergunta${Number([i]) + 1}`.valueOf()).value);
+        corp.push(document.querySelector(`.corPergunta${Number([i]) + 1}`.valueOf()).value);
+        respostacorreta.push(document.querySelector(`.respostaCorreta${Number([i]) + 1}`.valueOf()).value);
+        urlrespostacorreta.push(document.querySelector(`.urlImagemcerta${Number([i]) + 1}`.valueOf()).value);
+        respostaincorreta1.push(document.querySelector(`.incorreta${Number([i]) + 1}`.valueOf()).value);
+        urlrespostaincorreta1.push(document.querySelector(`.urlIncorreta${Number([i]) + 1}`.valueOf()).value);
+        respostaincorreta2.push(document.querySelector(`.incorreta${Number([i]) + 2}`.valueOf()).value);
+        urlrespostaincorreta2.push(document.querySelector(`.urlIncorreta${Number([i]) + 2}`.valueOf()).value);
+        respostaincorreta3.push(document.querySelector(`.incorreta${Number([i]) + 3}`.valueOf()).value);
+        urlrespostaincorreta3.push(document.querySelector(`.urlIncorreta${Number([i]) + 3}`.valueOf()).value);
+
+        
+    }
+
+    
+    decidaniveis();
+}
+
+
+
+
+
+
+function abrirpergunta(tabela){
+    const janaina = tabela.querySelector('.aberto');
+    janaina.style.display='flex';
+
+}
+
+function decidaniveis(){
+    
+    comecar.innerHTML = "";
+    comecar.innerHTML+=`<div class="crie-niveis">
+    <p>Crie seus níveis</p>
+    </div>`;
+
+    for(let i = 0; i < qtdniveis; i++){
+        comecar.innerHTML+=`
+        <div class="niveisjaca" onclick="abrirnivel(this)">
+        <div class="nivelfechado${Number([i]) + 1} fechado">
+            <p>Nível${Number([i]) + 1}</p>
+            <img src="./images/Vector.svg">
+        </div> 
+                 <div class="nivel${Number([i]) + 1} aberto niv">
+                     <p>Nível ${Number([i]) + 1} </p>
+                     <input type="text" placeholder="Título do nível" class="tituloNivel${Number([i]) + 1}">
+                     <input type="text" placeholder="% de acerto minima" class="descricaoNivel${Number([i]) + 1}">
+                     <input type="text" placeholder="URL da imagem do nível" class="urlImagemNivel${Number([i]) + 1}">
+                     <textarea type="text" placeholder="Descrição do nível" class="pontuacaoNivel${Number([i]) + 1} textarea" cols="30" rows="10"></textarea>
+                 </div>
+                 </div> `;
+    }
+
+    comecar.innerHTML+=`<button class="botaoCriarPerguntas" onclick="criarquiz()">Criar Quiz</button>`;
+
+    const primeironivelfechado = document.querySelector('.nivelfechado1');
+    const primeironivel = document.querySelector('.nivel1'); 
+
+    primeironivelfechado.classList.add('lacrado');
+    primeironivel.style.display='block';
+
+}
+
+function abrirnivel(jubileu){
+    const janaina = jubileu.querySelector('.aberto');
+    janaina.style.display='flex';
+
+}
+
+function criarquiz(){
+    comecar.innerHTML = "";
+    comecar.innerHTML = `
+    <ul class="finalcriar">
+        <li class="textodoido">Seu quizz esta pronto!</li>
+       <li class="prision"><img src="${imagem}">
+        <p class="titulofinal">${titulo}</p>
+    </li>
+    <li><button class="botaoCriarPerguntas">Acessar Quizz</button></li>
+    <li><p onclick="reloadpage()" class="home">Voltar para home</p></li>
+    </ul>`
+}
+
+
+
+
+
+function reloadpage(){
+    location.reload();
+}

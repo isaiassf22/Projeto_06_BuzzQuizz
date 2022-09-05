@@ -43,7 +43,7 @@ function receberQuizes(resposta){
             banner.innerHTML=` <img src="${containerDeQuizes[i].image}">
             <p class="teste">${containerDeQuizes[i].title}</p>
             `
-            abaquiz.innerHTML=`<li class="conteiner-pergunta">
+            abaquiz.innerHTML=`<li class="conteiner-pergunta pergunta${[i] + 1}">
             <div class="pergunta">
                 <p>${containerDeQuizes[i].questions[0].title}</p>
             </div>

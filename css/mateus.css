@@ -1,14 +1,6 @@
-@media (max-width:1100px){
-    .comecocriarquiz{
-        margin-top: 100px;
-        height: 550px;
-    }
-    .comecocriarquiz .inputs input{
-        width:340px;
-    }
-}
 
 /* COMECO CRIAR QUIZ */
+
 
 .comecocriarquiz{
     width:350px;
@@ -64,6 +56,14 @@
 
 
      .botaoCriarPerguntas {
+        background: #EC362D;
+        border-radius: 15px;
+        width: 324px;
+        height: 54px;
+        margin-top: 50px;
+        border: none;
+        outline: none;
+        cursor: pointer;
         font-family: 'Roboto';
         font-style: normal;
         font-weight: 400;
@@ -71,6 +71,7 @@
         line-height: 23px;
         color: #FFFFFF;
         margin-top: 31px;
+        margin-bottom: 10px;
      }
 
 /* FIM CRIAR QUIZ */
@@ -103,8 +104,19 @@ color: #000000;
 
 }
 
+.textodoido{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 23px;
+    display: flex;
+    align-items: center;
+    color: #000000;
+}
+
+
 .crie-pergunta{
-    margin-top: 150px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -116,14 +128,14 @@ color: #000000;
     color: #000000;
 }
 
-.decidaniveis{
-    margin-top: 15px;
-    display: flex;
+.decidaperguntas{
+    margin-top: 150px;
+    display: none;
     flex-direction: column;
     align-items: center;
 }
 
-.decidaniveis p{
+.decidaperguntas p{
 font-family: 'Roboto';
 font-style: normal;
 font-weight: 700;
@@ -132,15 +144,49 @@ line-height: 23px;
 color: #000000;
 }
 
+
+
+
+
 .aberto{
     margin-top: 15px;
     width: 600px;
     height: 825px;
-    display: flex;
+    display: none;
     flex-direction: column;
     background: #FFFFFF;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05);
 }
+
+.fotofinal{
+    width: 100%;
+    height: 100%;
+
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.5) 64.58%, #000000 100%);
+}
+
+.niv{
+    height: 500px;
+    display: none;
+}
+
+.niv p{
+    padding-top: 10px;
+}
+
+.niveisjaca{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.perguntajaca{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 
 .aberto p{
     font-family: 'Roboto';
@@ -158,7 +204,7 @@ color: #000000;
     border: 1px solid #D1D1D1;
     border-radius: 5px;
     box-sizing: border-box;
-    width: 564px;
+    width: 90%;
     height: 46px; 
     font-family: 'Roboto';
     font-style: italic;
@@ -170,6 +216,121 @@ color: #000000;
     margin-left: 20px;
 }
 
-.fechado{
+.aberto .textarea{
+    background: #FFFFFF;
+    border: 1px solid #D1D1D1;
+    border-radius: 5px;
+    box-sizing: border-box;
+    width: 564px;
+    height: 176px; 
+    font-family: 'Roboto';
+    font-style: italic;
+    font-weight: 400;
+    font-size: 19px;
+    line-height: 22px;
+    color: gray;
+    margin-top: 15px;
+    margin-left: 20px;
+}
+
+.lacrado{
     display: none;
+}
+
+.crie-niveis{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 23px;
+    color: #000000;
+}
+
+.finalcriar{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+
+.finalcriar .titulofinal{
+    position: absolute;
+    color: #FFFFFF;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 19px;
+    line-height: 22px;
+    padding: 10px;
+    word-wrap: break-word;
+    word-break: break-all;
+    
+}
+
+
+.finalcriar .home{
+        color: #818181;
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 21px;
+        cursor: pointer;
+}
+
+.prision{
+    display: flex;
+    align-items: flex-end;
+    margin-top: 30px;
+    width: 500px;
+    height: 266px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.5) 65.62%, rgba(0, 0, 0, 0.8) 100%), url(image.png);
+    border-radius: 5px;
+}
+
+.prision img{
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.5) 65.62%, rgba(0, 0, 0, 0.8) 100%), url(image.png);
+border-radius: 5px;
+}
+
+@media (max-width:1100px){
+    .prision{
+        width: 340px;
+        height: 181px;
+    }
+}
+
+@media (max-width:1100px){
+    .decidaperguntas{
+        margin-top: 100px;
+    }
+    .comecocriarquiz{
+        margin-top: 10px;
+    }
+    .comecocriarquiz input{
+        width: 341px;
+    }
+    .perguntajaca{
+        width: 375px;
+    }
+    .perguntajaca input{
+        width: 341px;
+        height: 46px;
+    }
+    .tamanho{
+        width: 375px;
+    }
+    .aberto input{
+        width: 341px;
+        height: 46px;
+    }
+    .finalcriar{
+        margin-top: 100px;
+    }
 }

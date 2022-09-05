@@ -12,7 +12,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="shortcut icon" href="./images/buzzfeedfavicon.webp" type="image/x-icon">
+    <link rel="shortcut icon" href="https://cdn.iconscout.com/icon/free/png-256/buzzfeed-2296086-1912045.png" type="image/x-icon">
 
     <title>Buzz Feed</title>
 </head>
@@ -26,36 +26,13 @@
         </div>
     </header>
     
-        <main > 
+        <main> 
 
-            <div class="decidaniveis" onclick="abrirpergunta(this)">
-                <div class="pergunta1">
-                    <p>Pergunta ${Number([i]) + 1}</p>
-                    <img src="./images/Vector.svg">
-                </div>
 
-            <div class="pergunta1 fechado">
-                <p>Pergunta 1</p>
-                <input type="text" placeholder="Texto da pergunta" class="textoPergunta1">
-                <input type="text" placeholder="Cor de fundo da pergunta" class="corPergunta1">
-                <p>Resposta Correta</p>
-                <input type="text" placeholder="Resposta correta" class="respostaCorreta1">
-                <input type="text" placeholder="URL da imagem" class="urlImagemcerta1">
-                <p>Repostas incorretas</p>
-                <input type="text" placeholder="Resposta incorreta 1" class="incorreta1">
-                <input type="text" placeholder="URL da imagem 1" class="urlIncorreta1">
-                <input type="text" placeholder="Resposta incorreta 2" class="incorreta2">
-                <input type="text" placeholder="URL da imagem 2" class="urlIncorreta2">
-                <input type="text" placeholder="Resposta incorreta 3" class="incorreta3">
-                <input type="text" placeholder="URL da imagem 3" class="urlIncorreta3">
+            <div class="decidaperguntas">
+               
             </div>
-
-            
-            <div class="comecar">
-                
-            </div>
-
-            <!-- ABA DE QUIZES DO USUARIO -->
+           
             <div class="quizes-usuario">
                 <p class="nenhumquiz">Você não criou nenhum <br>quizz ainda :(</p>
                 <button class="criarquizbotao" onclick="criarQuizInciar()">Criar Quizz</button>
@@ -88,138 +65,27 @@
                     </ul>
                 </div>
                 <!--tela 2-->
-                <div class="banner-superior escondido">
-                    <img src="./images/castle.png">
-                    <p class="teste">O quão Potterhead é você?</p>
-                </div>
-
-            <ul class="div-perguntas escondido">
-                <li class="conteiner-pergunta">
-                    <div class="pergunta">
-                        <p>Em qual animal Olho-Tonto Moody transfigurou Malfoy?</p>
-                    </div>
-
-                    <div class="grid-fotos">
-                        <div class="primeira opcao">
-                            <img src="./images/image 3.png">
-                            <p>Harry Potter e a Pedra Filosofal</p>
-                        </div>
-                        <div class="segunda opcao">
-                            <img src="./images/image 4 (1).png">
-                            <p>Gato</p>
-                        </div>
-                        <div class="terceira opcao">
-                            <img src="./images/image 7.png">
-                            <p>Rato</p>
-                        </div>
-                        <div class="quarta opcao">
-                            <img src="./images/image 8.png">
-                            <p>Fuinha</p>
-                        </div>
-                    </div>
-
-                    <li class="conteiner-pergunta">
-                        <div class="pergunta">
-                            <p>Em qual animal Olho-Tonto Moody transfigurou Malfoy?</p>
-                        </div>
-    
-                        <div class="grid-fotos">
-                            <div class="primeira opcao">
-                                <img src="./images/image 3.png">
-                                <p>Harry Potter e a Pedra Filosofal</p>
-                            </div>
-                            <div class="segunda opcao">
-                                <img src="./images/image 4 (1).png">
-                                <p>Gato</p>
-                            </div>
-                            <div class="terceira opcao">
-                                <img src="./images/image 7.png">
-                                <p>Rato</p>
-                            </div>
-                            <div class="quarta opcao">
-                                <img src="./images/image 8.png">
-                                <p>Fuinha</p>
-                            </div>
-                        </div>
-
-                        <li class="conteiner-pergunta">
-                            <div class="pergunta">
-                                <p>Em qual animal Olho-Tonto Moody transfigurou Malfoy?</p>
-                            </div>
-        
-                            <div class="grid-fotos">
-                                <div class="primeira opcao">
-                                    <img src="./images/image 3.png">
-                                    <p>Harry Potter e a Pedra Filosofal</p>
-                                </div>
-                                <div class="segunda opcao">
-                                    <img src="./images/image 4 (1).png">
-                                    <p>Gato</p>
-                                </div>
-                                <div class="terceira opcao">
-                                    <img src="./images/image 7.png">
-                                    <p>Rato</p>
-                                </div>
-                                <div class="quarta opcao">
-                                    <img src="./images/image 8.png">
-                                    <p>Fuinha</p>
-                                </div>
-                            </div>
-
-                            <li class="resultadoquiz">
-                                <header class="resultado">
-                                    <p>88% de acerto:você é praticamente um aluno de Hogwarts</p>
-                                </header>
-                                <main class="conteiner">
-                                    <img src="./images/image 10.png">
-                                    <div class="descricao">
-                                        <p>Parabéns Potterhead! <br>Bem-vindx a Hogwarts, aproveite o loop<br> infinito de comida e clique <br>no botão abaixo para usar o vira-tempo e <br>reiniciar este teste.</p>
-                                    </div>
+            </ul>
+        </div>
+        <!--tela 2-->
+                 <ul class="div-perguntas escondido">  
+                                    <li class="resultadoquiz">
+                                        <header class="resultado">
+                                            <p>88% de acerto:você é praticamente um aluno de Hogwarts</p>
+                                        </header>
+                                        <main class="conteiner">
+                                            <img src="./images/image 10.png">
+                                            <div class="descricao">
+                                                <p>Parabéns Potterhead! <br>Bem-vindx a Hogwarts, aproveite o loop<br> infinito de comida e clique <br>no botão abaixo para usar o vira-tempo e <br>reiniciar este teste.</p>
+                                            </div>
                                 </main>
                             </li>
                         </ul>
-                        <div class="comecocriarquiz escondido">
-                            <p>Comece pelo começo</p>
-                            <div class="inputs">
-                                <input type="text" placeholder="Título do seu quiz">
-                                <input type="text" placeholder="URL da imagem do seu quizz">
-                                <input type="text" placeholder="Quantidade de perguntas do quizz">
-                                <input type="text" placeholder="Quantidade de níveis do quizz">
-                                <button class="botaoCriarPerguntas">Proseguir para criar perguntas</button>
-                            </div>   
+                         
             </div>
                              
-            <div class="decidaniveis">
-                <p>Crie suas perguntas</p>
-                <div class="pergunta1 fechado">
-                    <p>Pergunta 1</p>
-                    <img src="./images/Vector.svg">
-                </div>
-
-                <div class="pergunta1-aberto">
-                    
-                </div>
-
-                <div class="pergunta2 fechado">
-                    <p>Pergunta 2</p>
-                    <img src="./images/Vector.svg">
-                </div>
-
-                <div class="pergunta1-aberto">
-                    
-                </div>
-
-
-                <div class="pergunta3 fechado">
-                    <p>Pergunta 3</p>
-                    <img src="./images/Vector.svg">
-                </div>
-
-
-                <div class="pergunta1-aberto">
-
-                </div>
-            </div>
+          
+           
         </main>
         <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
         <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
