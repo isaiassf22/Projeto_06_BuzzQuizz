@@ -3,15 +3,23 @@ function respostaSelecionada(parametro){
     console.log(apiSelecionada)
     console.log(apiSelecionada)
     console.log(parametro)
-    const bordaCheck=document.querySelector('.borda')
+    const bordaCheck=document.querySelector('.grid-fotos .borda')
     const seletor =parametro.childNodes[1]
-    if(parametro.dataset.check==='true'){
-        seletor.classList.add('borda-verde')
+        console.log(bordaCheck)
+      if (bordaCheck===null){
+        if(parametro.dataset.check==='true'){
+        seletor.classList.add('borda')
+        seletor.classList.add('verde')
 
     }
     else{
-       seletor.classList.add('borda-laranja')
+       seletor.classList.add('borda')
+       seletor.classList.add('laranja')
     }
+      } else{
+        console.log('erooooou')
+      } 
+    
 }
 
 /*if(bordaCheck!==null){

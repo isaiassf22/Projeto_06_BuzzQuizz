@@ -1,6 +1,6 @@
-.opcao .imagem.borda-verde{
-    border: 4px solid green;
+.opcao .imagem.borda.verde{
+    border: 6px solid green;
 }
-.opcao .imagem.borda-laranja{
-    border: 4px solid orange;
+.opcao .imagem.borda.laranja{
+    border: 6px solid orange;
 }
