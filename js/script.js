@@ -17,7 +17,8 @@ function receberQuizes(resposta){
      let renderizando='' //renderizar os quizzes
     for(i=0;i<containerDeQuizes.length;i++){
             renderizando+= `<li data-id="${containerDeQuizes[i].id}" onclick="escolherQuiz(this)">
-            <img src="${containerDeQuizes[i].image}" alt="">
+            <div class="gradiente"></div>
+            <img src="${containerDeQuizes[i].image}" alt="">       
             <p>${containerDeQuizes[i].title}</p>
         </li>
         `
