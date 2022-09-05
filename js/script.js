@@ -2,7 +2,8 @@ let containerDeQuizes=''
 let quizusuario =document.querySelector('.quizes-usuario');
 let quiztodos =document.querySelector('.conteiner-de-quizes');
 let abaquiz = document.querySelector('.div-perguntas');
-let banner = document.querySelector('.banner-superior');   
+let banner = document.querySelector('.banner-superior');
+let apiSelecionada=''   
 function PedirQuizes(){
     const promisse=axios.get('https://mock-api.driven.com.br/api/v4/buzzquizz/quizzes')
     promisse.then(receberQuizes)
@@ -20,7 +21,7 @@ function receberQuizes(resposta){
             <p>${containerDeQuizes[i].title}</p>
         </li>
         `
-        }
+    }
     
     gradeQuiz.innerHTML=renderizando;
     
@@ -37,7 +38,7 @@ function receberQuizes(resposta){
         listaDeId.push(containerDeQuizes[i].id)
         if(listaDeId[i]===quizSelecionado){
             exibirquiz()
-            
+            apiSelecionada=containerDeQuizes[i]
             console.log(containerDeQuizes[i])
             //lista para embaralhar as respostas
             let listaEmbaralha1=[[containerDeQuizes[i].questions[0].answers[0].image,containerDeQuizes[i].questions[0].answers[0].text],[containerDeQuizes[i].questions[0].answers[1].image,containerDeQuizes[i].questions[0].answers[1].text],
@@ -62,19 +63,19 @@ function receberQuizes(resposta){
             </div>
 
             <div class="grid-fotos">
-                <div class="primeira opcao" id="um">
+                <div class="primeira opcao" data-check="${containerDeQuizes[i].questions[1].answers[0].isCorrectAnswer}" onclick="respostaSelecionada(this)">
                     <img src="${listaEmbaralha1[0][0]}">
                     <p>${listaEmbaralha1[0][1]}</p>
                 </div>
-                <div class="segunda opcao" id="dois">
+                <div class="segunda opcao" data-check="${containerDeQuizes[i].questions[1].answers[1].isCorrectAnswer}" onclick="respostaSelecionada(this)">
                     <img src="${listaEmbaralha1[1][0]}">
                     <p>${listaEmbaralha1[1][1]}</p>
                 </div> 
-                <div class="terceira opcao" id="tres">
+                <div class="terceira opcao" data-check="${containerDeQuizes[i].questions[1].answers[2].isCorrectAnswer}" onclick="respostaSelecionada(this)">
                     <img src="${listaEmbaralha1[2][0]}">
                     <p>${listaEmbaralha1[2][1]}</p>
                 </div>
-                <div class="quarta opcao" id="quatro">
+                <div class="quarta opcao" data-check="${containerDeQuizes[i].questions[1].answers[3].isCorrectAnswer}" onclick="respostaSelecionada(this)">
                     <img src="${listaEmbaralha1[3][0]}">
                     <p>${listaEmbaralha1[3][1]}</p>
                 </div>
@@ -85,19 +86,19 @@ function receberQuizes(resposta){
                     </div>
 
                     <div class="grid-fotos">
-                        <div class="primeira opcao" id="cinco">
+                        <div class="primeira opcao" data-check="${containerDeQuizes[i].questions[1].answers[0].isCorrectAnswer}" onclick="respostaSelecionada(this)">
                             <img src="${listaEmbaralha2[0][0]}">
                             <p>${listaEmbaralha2[0][1]}</p>
                         </div>
-                        <div class="segunda opcao" id="seis">
-                            <img src${listaEmbaralha2[1][0]}">
+                        <div class="segunda opcao" data-check="${containerDeQuizes[i].questions[1].answers[1].isCorrectAnswer}" onclick="respostaSelecionada(this)">
+                            <img src="${listaEmbaralha2[1][0]}">
                             <p>${listaEmbaralha2[1][1]}</p>
                         </div>
-                        <div class="terceira opcao" id="sete">
+                        <div class="terceira opcao" data-check="${containerDeQuizes[i].questions[1].answers[2].isCorrectAnswer}" onclick="respostaSelecionada(this)">
                             <img src="${listaEmbaralha2[2][0]}">
                             <p>${listaEmbaralha2[2][1]}</p>
                         </div>
-                        <div class="quarta opcao" id="oito">
+                        <div class="quarta opcao" data-check="${containerDeQuizes[i].questions[1].answers[3].isCorrectAnswer}" onclick="respostaSelecionada(this)">
                             <img src="${listaEmbaralha2[3][0]}">
                             <p>${listaEmbaralha2[3][1]}</p>
                         </div>
@@ -108,19 +109,19 @@ function receberQuizes(resposta){
                     </div>
 
                     <div class="grid-fotos">
-                        <div class="primeira opcao" id="nove">
+                        <div class="primeira opcao" data-check="${containerDeQuizes[i].questions[1].answers[0].isCorrectAnswer}" onclick="respostaSelecionada(this)">
                             <img src="${listaEmbaralha3[0][0]}">
                             <p>${listaEmbaralha3[0][1]}</p>
                         </div>
-                        <div class="segunda opcao" id="dez">
+                        <div class="segunda opcao" data-check="${containerDeQuizes[i].questions[1].answers[1].isCorrectAnswer}" onclick="respostaSelecionada(this)">
                             <img src="${listaEmbaralha3[1][0]}">
                             <p>${listaEmbaralha3[1][1]}</p>
                         </div>
-                        <div class="terceira opcao" id="onze">
+                        <div class="terceira opcao" data-check="${containerDeQuizes[i].questions[1].answers[2].isCorrectAnswer}" onclick="respostaSelecionada(this)">
                             <img src="${listaEmbaralha3[2][0]}">
                             <p>${listaEmbaralha3[2][1]}</p>
                         </div>
-                        <div class="quarta opcao" id="doze">
+                        <div class="quarta opcao" data-check="${containerDeQuizes[i].questions[1].answers[3].isCorrectAnswer}" onclick="respostaSelecionada(this)">
                             <img src="${listaEmbaralha3[3][0]}">
                             <p>${listaEmbaralha3[3][1]}</p>
                         </div>
