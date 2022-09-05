@@ -35,27 +35,56 @@ function receberQuizes(resposta){
     let quizSelecionado=Number(x.dataset.id)
     console.log(quizSelecionado)
     let listaDeId=[]
-    for(i=0;i<containerDeQuizes.length;i++){
+    for(let i=0;i<containerDeQuizes.length;i++){
         listaDeId.push(containerDeQuizes[i].id)
         if(listaDeId[i]===quizSelecionado){
+            let objetoSelecionado = containerDeQuizes[i]
+            console.log(objetoSelecionado)
             exibirquiz()
             apiSelecionada=containerDeQuizes[i]
-            console.log(containerDeQuizes[i])
             //lista para embaralhar as respostas
-            let listaEmbaralha1=[[containerDeQuizes[i].questions[0].answers[0].image,containerDeQuizes[i].questions[0].answers[0].text],[containerDeQuizes[i].questions[0].answers[1].image,containerDeQuizes[i].questions[0].answers[1].text],
-            [containerDeQuizes[i].questions[0].answers[0].image,containerDeQuizes[i].questions[0].answers[0].text],[containerDeQuizes[i].questions[0].answers[1].image,containerDeQuizes[i].questions[0].answers[1].text]]
+
+            banner.innerHTML=` <img src="${containerDeQuizes[i].image}"> 
+            <p class="teste">${containerDeQuizes[i].title}</p>
+            ` //renderizar o titulo e imagagem do quiz
+
+            for(let p=0;p<objetoSelecionado.questions.length;p++){ //p=pergunta
+                abaquiz.innerHTML+=`<li class="conteiner-pergunta pergunta${[p] + 1}">
+                <div class="pergunta">
+                    <p>${containerDeQuizes[i].questions[p].title}</p>
+                </div>
+                <div class="grid-fotos">
+                `
+                console.log('pergunta',p)
+                for(let r=0;r<objetoSelecionado.questions[p].answers.length;r++){ // r=resposta
+                    
+                   abaquiz.innerHTML+=`<div class="n${p+1}ª opcao" data-check="${containerDeQuizes[i].questions[p].answers[r].isCorrectAnswer}" onclick="respostaSelecionada(this)">
+                       <img src="${containerDeQuizes[i].questions[p].answers[r].image}">
+                       <p>${containerDeQuizes[i].questions[p].answers[r].text}</p>
+                   </div>       
+               ` 
+                console.log('resposta',r)
+                }
+                    
+                
+                   
+                 
+                
+            }
+        /*let listaEmbaralha1=[[containerDeQuizes[i].questions[0].answers[0].image,containerDeQuizes[i].questions[0].answers[0].text],[containerDeQuizes[i].questions[0].answers[1].image,containerDeQuizes[i].questions[0].answers[1].text],
+            [containerDeQuizes[i].questions[0].answers[2].image,containerDeQuizes[i].questions[0].answers[2].text],[containerDeQuizes[i].questions[0].answers[3].image,containerDeQuizes[i].questions[0].answers[3].text]]
             
             let listaEmbaralha2=[[containerDeQuizes[i].questions[1].answers[0].image,containerDeQuizes[i].questions[1].answers[0].text],[containerDeQuizes[i].questions[1].answers[1].image,containerDeQuizes[i].questions[1].answers[1].text],
-            [containerDeQuizes[i].questions[1].answers[0].image,containerDeQuizes[i].questions[1].answers[0].text],[containerDeQuizes[i].questions[1].answers[1].image,containerDeQuizes[i].questions[1].answers[1].text]]
+            [containerDeQuizes[i].questions[1].answers[2].image,containerDeQuizes[i].questions[1].answers[2].text],[containerDeQuizes[i].questions[1].answers[3].image,containerDeQuizes[i].questions[1].answers[3].text]]
             
             let listaEmbaralha3=[[containerDeQuizes[i].questions[2].answers[0].image,containerDeQuizes[i].questions[2].answers[0].text],[containerDeQuizes[i].questions[2].answers[1].image,containerDeQuizes[i].questions[2].answers[1].text],
-            [containerDeQuizes[i].questions[2].answers[0].image,containerDeQuizes[i].questions[2].answers[0].text],[containerDeQuizes[i].questions[2].answers[1].image,containerDeQuizes[i].questions[2].answers[1].text]]
-            
+            [containerDeQuizes[i].questions[2].answers[2].image,containerDeQuizes[i].questions[2].answers[2].text],[containerDeQuizes[i].questions[2].answers[3].image,containerDeQuizes[i].questions[2].answers[3].text]]
+            */
             listaEmbaralha1.sort(()=> Math.random()-0.5)
             listaEmbaralha2.sort(()=> Math.random()-0.5)
             listaEmbaralha3.sort(()=> Math.random()-0.5)
 
-            banner.innerHTML=` <img src="${containerDeQuizes[i].image}">
+            /*banner.innerHTML=` <img src="${containerDeQuizes[i].image}">
             <p class="teste">${containerDeQuizes[i].title}</p>
             `
             abaquiz.innerHTML=`<li class="conteiner-pergunta pergunta${[i] + 1}">
@@ -128,7 +157,7 @@ function receberQuizes(resposta){
                         </div>
                     </div>
     
-            `
+            `*/
     }
     }
 }
