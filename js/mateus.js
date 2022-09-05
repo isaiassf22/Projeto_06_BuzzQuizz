@@ -274,7 +274,7 @@ function guardarniveis(){
                 title: titulonivel[i],
                 image: imagemnivel[i],
                 text: descricaonivel[i],
-                minValue: pontuacaonivel[i]
+                minValue: Math.ceil(pontuacaonivel[i])
             },
             ]
         }
@@ -321,6 +321,7 @@ function criarquiz(){
 
     console.log(quizcriado)
     const promessa = axios.post('https://mock-api.bootcamp.respondeai.com.br/api/v2/buzzquizz/quizzes', quizcriado);
+    console.log(quizcriado)
     promessa.then(sucesso);
     promessa.catch(erro => console.log(erro));
 
