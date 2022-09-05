@@ -6,18 +6,33 @@ const iniciocriar = document.querySelector('.comecocriarquiz');
 const iniciocriar2 = document.querySelector('.decidaniveis');
 const comecar = document.querySelector('.decidaperguntas');
 
-let titulo;
-let imagem;
+let titulonovo;
+let imagemnovo;
 let qtdperguntas;
 let qtdniveis;
-
-
-let parte1 = {
-    title: titulo,
-    image: imagem,
-}
+caramelo={}
+titulonivel = []
+pontuacaonivel = []
+imagemnivel = []
+descricaonivel = []
 
 let perguntas = [];
+
+
+let goiaba = {}
+
+
+
+tituloperguntas = []
+corp = []
+respostacorreta = []
+urlrespostacorreta = []
+respostaincorreta1 = []
+urlrespostaincorreta1 = []
+respostaincorreta2 = []
+urlrespostaincorreta2 = []
+respostaincorreta3 = []
+urlrespostaincorreta3 = []
 
 
 
@@ -47,10 +62,10 @@ function criarQuizInciar(){
 
 function validarquizinicial(){
     const inputtitulo = document.querySelector('.tituloquiznovo');
-    titulo = inputtitulo.value;
+    titulonovo = inputtitulo.value;
 
     const inputimagem = document.querySelector('.imagemquiznovo');
-    imagem = inputimagem.value;
+    imagemnovo = inputimagem.value;
 
     const inputperguntas = document.querySelector('.quantidadeperguntasnovo');
     qtdperguntas = inputperguntas.value;
@@ -69,11 +84,11 @@ function validarquizinicial(){
        }
      }
 
-     checkUrl(imagem);
+     checkUrl(imagemnovo);
 
-    if(titulo == undefined || titulo == "" || titulo.length < 20){
+    if(titulonovo == undefined || titulonovo == "" || titulonovo.length < 20){
         alert("O seu titulo esta vazio ou esta com menos de 20 caracteres");
-    }else if(imagem == undefined || imagem == "" || funciona === false){
+    }else if(imagemnovo == undefined || imagemnovo == "" || funciona === false){
         alert("A sua imagem precisa esta no formato de url,tente novamente");
     }else if(qtdperguntas == NaN || qtdperguntas == "" || qtdperguntas < 2){
         alert("A quantidade de perguntas deve ser maior que dois e nao pode estar vazio :D");
@@ -83,6 +98,12 @@ function validarquizinicial(){
         comecar.innerHTML="";
         aparecerperguntas();
     }
+
+    console.log(titulonovo);
+    console.log(imagemnovo);
+    console.log(qtdperguntas);
+    console.log(qtdniveis);
+
 }
 
 function aparecerperguntas(){
@@ -100,11 +121,11 @@ function aparecerperguntas(){
        </div> 
                 <div class="pergunta${Number([i]) + 1} aberto tamanho">
                     <p>Pergunta ${Number([i]) + 1} </p>
-                    <input type="text" placeholder="Texto da pergunta" class="textoPergunta${Number([i]) + 1}">
-                    <input type="text" placeholder="Cor de fundo da pergunta" class="corPergunta${Number([i]) + 1}">
+                    <input type="text" placeholder="Texto da pergunta" class="textoPergunta${Number([i]) + 1} textop">
+                    <input type="text" placeholder="Cor de fundo da pergunta" class="corPergunta${Number([i]) + 1} corpe">
                     <p>Resposta Correta</p>
-                    <input type="text" placeholder="Resposta correta" class="respostaCorreta${Number([i]) + 1}">
-                    <input type="text" placeholder="URL da imagem" class="urlImagemcerta${Number([i]) + 1}">
+                    <input type="text" placeholder="Resposta correta" class="respostaCorreta${Number([i]) + 1} rescp">
+                    <input type="text" placeholder="URL da imagem" class="urlImagemcerta${Number([i]) + 1} ">
                     <p>Repostas incorretas</p>
                     <input type="text" placeholder="Resposta incorreta 1" class="incorreta${Number([i]) + 1}">
                     <input type="text" placeholder="URL da imagem 1" class="urlIncorreta${Number([i]) + 1}">
@@ -137,16 +158,23 @@ function aparecerperguntas(){
 }
 
 
-tituloperguntas = []
-corp = []
-respostacorreta = []
-urlrespostacorreta = []
-respostaincorreta1 = []
-urlrespostaincorreta1 = []
-respostaincorreta2 = []
-urlrespostaincorreta2 = []
-respostaincorreta3 = []
-urlrespostaincorreta3 = []
+/* function validarperguntas(){
+    if(textop.length < 20){
+        alert("O texto da pergunta deve ter mais de 20 caracteres");
+    } else if(corpe.length < 6){
+        alert("A cor da pergunta deve ter mais de 6 caracteres");
+    } else if(rescp.length < 1){
+        alert("A resposta correta deve ter mais de 1 caracter");
+    } else if (urlImagemcerta.length < 10){
+        alert("A url da imagem deve ter mais de 10 caracteres");
+    }else{
+        guardarinputs()
+    }
+ 
+
+   
+}
+*/
 
 function guardarinputs(){
     for(let i = 0; i < qtdperguntas; i++){
@@ -161,14 +189,47 @@ function guardarinputs(){
         respostaincorreta3.push(document.querySelector(`.incorreta${Number([i]) + 3}`.valueOf()).value);
         urlrespostaincorreta3.push(document.querySelector(`.urlIncorreta${Number([i]) + 3}`.valueOf()).value);
 
+
+        
         
     }
 
-    
+    objeto()
     decidaniveis();
 }
 
-
+function objeto(){
+    for(let i = 0; i < qtdperguntas; i++){
+        goiaba[i] = {
+            title: tituloperguntas[i],
+            color: corp[i],
+            answers:[{
+                text: respostacorreta[i],
+                image: urlrespostacorreta[i],
+                isCorrectAnswer: true
+            },
+            {
+                text: respostaincorreta1[i],
+                image: urlrespostaincorreta1[i],
+                isCorrectAnswer: false
+            },
+            {
+                text: respostaincorreta2[i],
+                image: urlrespostaincorreta2[i],
+                isCorrectAnswer: false
+            },
+            {
+                text: respostaincorreta3[i],
+                image: urlrespostaincorreta3[i],
+                isCorrectAnswer: false
+            }
+            ],  
+    }
+    
+}
+    console.log(goiaba);
+    
+}
 
 
 
@@ -196,9 +257,9 @@ function decidaniveis(){
                  <div class="nivel${Number([i]) + 1} aberto niv">
                      <p>Nível ${Number([i]) + 1} </p>
                      <input type="text" placeholder="Título do nível" class="tituloNivel${Number([i]) + 1}">
-                     <input type="text" placeholder="% de acerto minima" class="descricaoNivel${Number([i]) + 1}">
+                     <input type="text" placeholder="% de acerto minima" class="pontuacaoNivel${Number([i]) + 1}">
                      <input type="text" placeholder="URL da imagem do nível" class="urlImagemNivel${Number([i]) + 1}">
-                     <textarea type="text" placeholder="Descrição do nível" class="pontuacaoNivel${Number([i]) + 1} textarea" cols="30" rows="10"></textarea>
+                     <textarea type="text" placeholder="Descrição do nível" class="descricaoNivel${Number([i]) + 1} textarea" cols="30" rows="10"></textarea>
                  </div>
                  </div> `;
     }
@@ -211,7 +272,37 @@ function decidaniveis(){
     primeironivelfechado.classList.add('lacrado');
     primeironivel.style.display='block';
 
+    guardarniveis();
+
 }
+
+
+
+function guardarniveis(){
+    for(let i = 0; i < qtdniveis; i++){
+        titulonivel.push(document.querySelector(`.tituloNivel${Number([i]) + 1}`.valueOf()).value);
+        pontuacaonivel.push(document.querySelector(`.pontuacaoNivel${Number([i]) + 1}`.valueOf()).value);
+        imagemnivel.push(document.querySelector(`.urlImagemNivel${Number([i]) + 1}`.valueOf()).value);
+        descricaonivel.push(document.querySelector(`.descricaoNivel${Number([i]) + 1}`.valueOf()).value);
+
+        caramelo[i] = {
+            leveis: [{
+                title: titulonivel[i],
+                image: imagemnivel[i],
+                text: descricaonivel[i],
+                minValue: pontuacaonivel[i]
+            },
+            ]
+        }
+    }
+
+}
+
+
+
+
+
+
 
 function abrirnivel(jubileu){
     const janaina = jubileu.querySelector('.aberto');
@@ -219,13 +310,26 @@ function abrirnivel(jubileu){
 
 }
 
+let quizcriado;
+
+
 function criarquiz(){
+
+    quizcriado = {
+        title: titulonovo,
+        image: imagemnovo,
+        questions: [goiaba],
+        leveis: [caramelo]
+    };
+    console.log(quizcriado);
     comecar.innerHTML = "";
     comecar.innerHTML = `
     <ul class="finalcriar">
         <li class="textodoido">Seu quizz esta pronto!</li>
-       <li class="prision"><img src="${imagem}">
-        <p class="titulofinal">${titulo}</p>
+       <li class="prision">
+       <div class="gradiente2"></div>
+       <img src="${imagemnovo}">
+        <p class="titulofinal">${titulonovo}</p>
     </li>
     <li><button class="botaoCriarPerguntas">Acessar Quizz</button></li>
     <li><p onclick="reloadpage()" class="home">Voltar para home</p></li>
@@ -239,3 +343,5 @@ function criarquiz(){
 function reloadpage(){
     location.reload();
 }
+
+
