@@ -3,12 +3,17 @@ function respostaSelecionada(parametro){
     console.log(apiSelecionada)
     console.log(apiSelecionada)
     console.log(parametro)
-    let imge=document.querySelector('.imagem')
-    imge.classList.add('borda')
+    const bordaCheck=document.querySelector('.borda')
+    const seletor =parametro.childNodes[1]
     if(parametro.dataset.check==='true'){
-        alert('acertou')
+        seletor.classList.add('borda-verde')
+
     }
     else{
-        alert('erooooooou')
+       seletor.classList.add('borda-laranja')
     }
 }
+
+/*if(bordaCheck!==null){
+        bordaCheck.classList.remove('borda')
+    }*/
